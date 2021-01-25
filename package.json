@@ -16,7 +16,8 @@
   "dependencies": {
     "@middy/core": "^1.5.0",
     "@middy/http-json-body-parser": "^1.5.0",
-    "source-map-support": "^0.5.19"
+    "source-map-support": "^0.5.19",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
@@ -41,6 +42,7 @@
     "lint-staged": "^10.5.3",
     "prettier": "^2.2.1",
     "serverless": "^2.16.0",
+    "serverless-dotenv-plugin": "^3.1.0",
     "serverless-offline": "^6.8.0",
     "serverless-stage-manager": "^1.0.5",
     "serverless-webpack": "^5.2.0",
