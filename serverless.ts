@@ -3,7 +3,7 @@ import type { AWS } from '@serverless/typescript';
 import { hello } from './src/functions';
 
 const serverlessConfiguration: AWS = {
-  service: 'serverless-typescript',
+  service: 'notes-api',
   frameworkVersion: '2',
   custom: {
     webpack: {
