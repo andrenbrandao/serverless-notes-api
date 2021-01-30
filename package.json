@@ -16,6 +16,7 @@
   "dependencies": {
     "@middy/core": "^1.5.0",
     "@middy/http-json-body-parser": "^1.5.0",
+    "aws-sdk": "^2.834.0",
     "source-map-support": "^0.5.19",
     "uuid": "^8.3.2"
   },
@@ -26,6 +27,7 @@
     "@types/aws-lambda": "^8.10.64",
     "@types/jest": "^26.0.20",
     "@types/node": "^14.14.6",
+    "@types/uuid": "^8.3.0",
     "@typescript-eslint/eslint-plugin": "^4.13.0",
     "@typescript-eslint/parser": "^4.13.0",
     "commitlint": "^11.0.0",

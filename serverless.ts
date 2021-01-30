@@ -1,6 +1,7 @@
+/* eslint-disable no-template-curly-in-string */
 import type { AWS } from '@serverless/typescript';
 
-import { hello } from './src/functions';
+import { hello, create } from './src/functions';
 
 const serverlessConfiguration: AWS = {
   service: 'notes-api',
@@ -21,19 +22,37 @@ const serverlessConfiguration: AWS = {
   provider: {
     name: 'aws',
     runtime: 'nodejs12.x',
+    stage: '${opt:stage, "dev"}',
+    region: 'us-east-1',
     apiGateway: {
       minimumCompressionSize: 1024,
       shouldStartNameWithService: true,
     },
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
+      tableName: 'notes',
     },
     lambdaHashingVersion: '20201221',
+    iamRoleStatements: [
+      {
+        Effect: 'Allow',
+        Action: [
+          'dynamodb:Scan',
+          'dynamodb:Query',
+          'dynamodb:GetItem',
+          'dynamodb:PutItem',
+          'dynamodb:UpdateItem',
+          'dynamodb:DeleteItem',
+          'dynamodb:DescribeTable',
+        ],
+        Resource: 'arn:aws:dynamodb:us-east-1:*:*',
+      },
+    ],
   },
   package: {
     individually: true,
   },
-  functions: { hello },
+  functions: { hello, create },
 };
 
 module.exports = serverlessConfiguration;
