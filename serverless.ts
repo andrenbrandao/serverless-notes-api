@@ -1,7 +1,7 @@
 /* eslint-disable no-template-curly-in-string */
 import type { AWS } from '@serverless/typescript';
 
-import { hello, create, get } from './src/functions';
+import { hello, create, get, list } from './src/functions';
 
 const serverlessConfiguration: AWS = {
   service: 'notes-api',
@@ -52,7 +52,7 @@ const serverlessConfiguration: AWS = {
   package: {
     individually: true,
   },
-  functions: { hello, create, get },
+  functions: { hello, create, get, list },
 };
 
 module.exports = serverlessConfiguration;
