@@ -1,7 +1,6 @@
 import * as uuid from 'uuid';
-import AWS from 'aws-sdk';
-
-const dynamoDb = new AWS.DynamoDB.DocumentClient();
+import handler from '@libs/handler-lib';
+import dynamoDb from '@libs/dynamodb-lib';
 
 const create = async (event, context) => {
   // Request body is passed in as a JSON encoded string in 'event.body'
@@ -19,19 +18,9 @@ const create = async (event, context) => {
     },
   };
 
-  try {
-    await dynamoDb.put(params).promise();
+  await dynamoDb.put(params);
 
-    return {
-      statusCode: 200,
-      body: JSON.stringify(params.Item),
-    };
-  } catch (e) {
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: e.message }),
-    };
-  }
+  return params.Item;
 };
 
-export const main = create;
+export const main = handler(create);
