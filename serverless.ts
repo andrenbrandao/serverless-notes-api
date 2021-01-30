@@ -2,7 +2,6 @@
 import type { AWS } from '@serverless/typescript';
 
 import {
-  hello,
   createNote,
   getNote,
   listNote,
@@ -60,7 +59,6 @@ const serverlessConfiguration: AWS = {
     individually: true,
   },
   functions: {
-    hello,
     create: createNote,
     get: getNote,
     list: listNote,
