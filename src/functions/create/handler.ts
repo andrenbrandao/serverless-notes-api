@@ -2,7 +2,7 @@ import * as uuid from 'uuid';
 import handler from '@libs/handler-lib';
 import dynamoDb from '@libs/dynamodb-lib';
 
-const create = async (event, context) => {
+const createNote = async (event, context) => {
   // Request body is passed in as a JSON encoded string in 'event.body'
   const data = JSON.parse(event.body);
 
@@ -23,4 +23,4 @@ const create = async (event, context) => {
   return params.Item;
 };
 
-export const main = handler(create);
+export const main = handler(createNote);

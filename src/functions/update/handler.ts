@@ -1,7 +1,7 @@
 import handler from '@libs/handler-lib';
 import dynamoDb from '@libs/dynamodb-lib';
 
-const update = async (event, context) => {
+const updateNote = async (event, context) => {
   const data = JSON.parse(event.body);
   const params = {
     TableName: process.env.tableName,
@@ -28,4 +28,4 @@ const update = async (event, context) => {
   return { status: true };
 };
 
-export const main = handler(update);
+export const main = handler(updateNote);

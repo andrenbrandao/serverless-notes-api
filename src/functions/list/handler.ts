@@ -1,7 +1,7 @@
 import handler from '@libs/handler-lib';
 import dynamoDb from '@libs/dynamodb-lib';
 
-const list = async (event, context) => {
+const listNotes = async (event, context) => {
   const params = {
     TableName: process.env.tableName,
     // 'KeyConditionExpression' defines the condition for the query
@@ -21,4 +21,4 @@ const list = async (event, context) => {
   return result.Items;
 };
 
-export const main = handler(list);
+export const main = handler(listNotes);
