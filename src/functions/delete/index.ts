@@ -5,6 +5,7 @@ export default {
       http: {
         method: 'delete',
         path: 'notes/{id}',
+        authorizer: 'aws_iam',
       },
     },
   ],

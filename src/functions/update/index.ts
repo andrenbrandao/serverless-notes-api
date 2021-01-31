@@ -5,6 +5,7 @@ export default {
       http: {
         method: 'put',
         path: 'notes/{id}',
+        authorizer: 'aws_iam',
       },
     },
   ],

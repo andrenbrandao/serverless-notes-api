@@ -13,3 +13,6 @@ yarn-error.log
 
 # Coverage
 coverage
+
+# Ignore secret file
+.ignore.env
