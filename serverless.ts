@@ -7,6 +7,7 @@ import {
   listNote,
   updateNote,
   deleteNote,
+  billing,
 } from './src/functions';
 
 const serverlessConfiguration: AWS = {
@@ -37,6 +38,7 @@ const serverlessConfiguration: AWS = {
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
       tableName: 'notes',
+      stripeSecretKey: '${env:STRIPE_SECRET_KEY}',
     },
     lambdaHashingVersion: '20201221',
     iamRoleStatements: [
@@ -64,6 +66,7 @@ const serverlessConfiguration: AWS = {
     list: listNote,
     update: updateNote,
     delete: deleteNote,
+    billing,
   },
 };
 

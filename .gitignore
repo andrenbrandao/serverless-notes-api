@@ -16,3 +16,6 @@ coverage
 
 # Ignore secret file
 .ignore.env
+
+# Environment
+.env
