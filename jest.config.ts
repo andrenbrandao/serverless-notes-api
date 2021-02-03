@@ -7,7 +7,7 @@ export default {
   clearMocks: true,
   preset: 'ts-jest',
   testEnvironment: 'node',
-  testMatch: ['**/*.spec.ts'],
+  testMatch: ['**/*.{spec,test}.ts'],
   moduleNameMapper: {
     '@libs/(.*)': '<rootDir>/src/libs/$1',
   },
