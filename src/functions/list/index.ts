@@ -6,6 +6,7 @@ export default {
         method: 'get',
         path: 'notes',
         authorizer: 'aws_iam',
+        cors: true,
       },
     },
   ],

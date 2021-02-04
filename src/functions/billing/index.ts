@@ -6,6 +6,7 @@ export default {
         method: 'post',
         path: 'billing',
         authorizer: 'aws_iam',
+        cors: true,
       },
     },
   ],

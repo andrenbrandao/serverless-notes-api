@@ -6,6 +6,7 @@ export default {
         method: 'delete',
         path: 'notes/{id}',
         authorizer: 'aws_iam',
+        cors: true,
       },
     },
   ],
